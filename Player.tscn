@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Cubo.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.2403, 27.8328 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 10, 0 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 280, 340 )
+scale = Vector2( 0.367647, 0.367647 )
+frames = SubResource( 1 )
+offset = Vector2( -383.4, 22.1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 138.663, 348.25 )
+shape = SubResource( 2 )
+
