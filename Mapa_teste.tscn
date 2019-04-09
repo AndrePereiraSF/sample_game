@@ -13,10 +13,10 @@ texture = ExtResource( 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Mapinha"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mapinha/StaticBody2D"]
-polygon = PoolVector2Array( -5.81299, 538.847, -15.4921, 518.414, 9.60248, 430.055, 57.6735, 323.735, 960.066, 322.776, 964.112, 539.963 )
+polygon = PoolVector2Array( -5.81299, 538.847, -15.4921, 518.414, 9.60248, 430.055, 57.6735, 323.735, 960.139, 323.201, 964.112, 539.963 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mapinha/StaticBody2D"]
-polygon = PoolVector2Array( -378.532, 539.638, -452.539, 326.429, -966.046, 315.891, -961.502, 538.554 )
+polygon = PoolVector2Array( -378.532, 539.638, -453.817, 324.149, -959.708, 323.833, -961.502, 538.554 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2.39166, 7.17496 )
