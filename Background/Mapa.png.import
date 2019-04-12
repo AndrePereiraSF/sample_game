@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ceu_prov.png-e1ecc73543eb02341ebe11cf81389ae6.stex"
+path="res://.import/Mapa.png-6f7c4082a3b686c2f01fb5d4951374ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ceu_prov.png"
-dest_files=[ "res://.import/Ceu_prov.png-e1ecc73543eb02341ebe11cf81389ae6.stex" ]
+source_file="res://Background/Mapa.png"
+dest_files=[ "res://.import/Mapa.png-6f7c4082a3b686c2f01fb5d4951374ad.stex" ]
 
 [params]
 

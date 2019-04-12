@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Ceu_prov.png" type="Texture" id=1]
-[ext_resource path="res://Mapa.png" type="Texture" id=2]
+[ext_resource path="res://Background/Ceu_prov.png" type="Texture" id=1]
+[ext_resource path="res://Background/Mapa.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
@@ -28,5 +28,5 @@ polygon = PoolVector2Array( -961.555, 169.403, -961.061, -52.2245, -454.608, -52
 polygon = PoolVector2Array( 957.986, -44.5153, -63.019, -44.5153, -86.8689, 65.8438, -86.8689, 136.449, -78.3785, 172.431, 960.288, 172.431 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -107.294, 44.828 )
+position = Vector2( 851.706, -122.172 )
 
