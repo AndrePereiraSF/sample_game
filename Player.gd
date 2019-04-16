@@ -14,20 +14,17 @@ func jump():
 func walk(direction):
 	if direction == "left":
 		motion.x = -SPEED
-		$AnimatedSprite.animation = "Walk"
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play()
+		$Sprite/AnimationPlayer.play("Walk")
+		$Sprite.flip_h = true
 	elif direction == "right":
-		$AnimatedSprite.animation = "Walk"
-		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play()
 		motion.x = SPEED
-		$CollisionShape2D.position
+		$Sprite/AnimationPlayer.play("Walk")
+		$Sprite.flip_h = false
+
 
 func stop():
 	motion.x = 0
-	$AnimatedSprite.animation = "idle"
-	$AnimatedSprite.play()
+	$Sprite/AnimationPlayer.play("Idle")
 
 func _ready():
 	screensize = get_viewport_rect().size
@@ -43,16 +40,7 @@ func _physics_process(delta):
 	else:
 		stop()
 	if is_on_floor():
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("space"):
 			jump()
-			double = true
 
-	if not is_on_floor() and double:
-		if Input.is_action_pressed("ui_up"):
-			jump()
-			double = false
-
-	if $CollisionShape2D.position.x >= screensize.x - 1000:
-		stop()
-		
 	motion = move_and_slide(motion, UP)
