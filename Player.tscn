@@ -1,23 +1,23 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Player/Idle/Idle.png" type="Texture" id=2]
-[ext_resource path="res://Player/Idle/Blink.png" type="Texture" id=3]
-[ext_resource path="res://Player/Walk/F1.png" type="Texture" id=4]
-[ext_resource path="res://Player/Walk/F2.png" type="Texture" id=5]
-[ext_resource path="res://Player/Walk/F3.png" type="Texture" id=6]
+[ext_resource path="res://Player/Walk/F1.png" type="Texture" id=2]
+[ext_resource path="res://Player/Walk/F2.png" type="Texture" id=3]
+[ext_resource path="res://Player/Walk/F3.png" type="Texture" id=4]
+[ext_resource path="res://Player/Idle/Idle.png" type="Texture" id=5]
+[ext_resource path="res://Player/Idle/Blink.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 1.5
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -32,11 +32,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -7.62939e-06, -4.57764e-05 )
+position = Vector2( 0, -4.57764e-05 )
 scale = Vector2( 0.367647, 0.367647 )
 frames = SubResource( 1 )
-animation = "Idle"
-speed_scale = 1.4
+animation = "Walk"
+frame = 2
 offset = Vector2( 3.05176e-05, -3.62396e-05 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
