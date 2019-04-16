@@ -1,0 +1,93 @@
+{
+	"textures": [
+		{
+			"image": "SpriteSheet.png",
+			"size": {
+				"w": 145,
+				"h": 747
+			},
+			"sprites": [
+				{
+					"filename": "F2.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 143,
+						"h": 148
+					},
+					"margin": {
+						"x": 32,
+						"y": 30,
+						"w": 57,
+						"h": 52
+					}
+				},
+				{
+					"filename": "F3.png",
+					"region": {
+						"x": 1,
+						"y": 151,
+						"w": 143,
+						"h": 148
+					},
+					"margin": {
+						"x": 32,
+						"y": 30,
+						"w": 57,
+						"h": 52
+					}
+				},
+				{
+					"filename": "Blink.png",
+					"region": {
+						"x": 1,
+						"y": 301,
+						"w": 143,
+						"h": 147
+					},
+					"margin": {
+						"x": 32,
+						"y": 30,
+						"w": 57,
+						"h": 53
+					}
+				},
+				{
+					"filename": "F1.png",
+					"region": {
+						"x": 1,
+						"y": 450,
+						"w": 143,
+						"h": 147
+					},
+					"margin": {
+						"x": 32,
+						"y": 30,
+						"w": 57,
+						"h": 53
+					}
+				},
+				{
+					"filename": "Idle.png",
+					"region": {
+						"x": 1,
+						"y": 599,
+						"w": 143,
+						"h": 147
+					},
+					"margin": {
+						"x": 32,
+						"y": 30,
+						"w": 57,
+						"h": 53
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:ccec0ca8cdeb9e9bc2cec97a3d5e7eb6:aab11ecbbf1ec393c955c91c57f0a457:feb383e149cf7312e812049eacbf64f9$"
+	}
+}

@@ -26,7 +26,7 @@ func walk(direction):
 
 func stop():
 	motion.x = 0
-	$AnimatedSprite.animation = "Idle"
+	$AnimatedSprite.animation = "idle"
 	$AnimatedSprite.play()
 
 func _ready():
