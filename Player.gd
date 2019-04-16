@@ -40,7 +40,7 @@ func _physics_process(delta):
 	else:
 		stop()
 	if is_on_floor():
-		if Input.is_action_pressed("space"):
+		if Input.is_action_pressed("ui_select"):
 			jump()
 
 	motion = move_and_slide(motion, UP)
