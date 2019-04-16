@@ -15,16 +15,18 @@ animations = [ {
 extents = Vector2( 29.2403, 27.8328 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 10, 0 )
+position = Vector2( 170, 200 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 280, 340 )
+position = Vector2( -7.62939e-06, -4.57764e-05 )
 scale = Vector2( 0.367647, 0.367647 )
 frames = SubResource( 1 )
-offset = Vector2( -383.4, 22.1 )
+offset = Vector2( 3.05176e-05, -3.62396e-05 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 138.663, 348.25 )
 shape = SubResource( 2 )
 

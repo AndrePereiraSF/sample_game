@@ -19,6 +19,12 @@ config/name="sample_game"
 run/main_scene="res://Mapa_teste.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1366
+window/size/height=768
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
