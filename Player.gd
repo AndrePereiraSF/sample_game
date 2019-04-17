@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-const GRAVITY = 20
-export var jump_heigth = -350
-export var speed = 200
+
+var GRAVITY = 20
+var jump_heigth = -350
+var speed = 200
 var motion = Vector2()
 var can_double_jump = false
 var screensize

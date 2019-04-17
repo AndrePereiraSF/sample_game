@@ -1,20 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Background/Ceu_prov.png" type="Texture" id=1]
-[ext_resource path="res://Background/Mapa.png" type="Texture" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Background/Ceu_prov.png" type="Texture" id=2]
+[ext_resource path="res://Background/Mapa.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Pause.tscn" type="PackedScene" id=5]
 
-[node name="Mapa" type="Node2D"]
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Ceu" type="Sprite" parent="."]
 position = Vector2( 683.246, 381.66 )
 scale = Vector2( 0.717223, 0.723854 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="Mapa" type="Sprite" parent="."]
 position = Vector2( 681.597, 588.273 )
 scale = Vector2( 0.715985, 1.04173 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mapa"]
 visible = false
@@ -27,6 +30,9 @@ polygon = PoolVector2Array( -961.555, 169.403, -961.551, -48.1621, -499.23, -48.
 [node name="Terra_R" type="CollisionPolygon2D" parent="Mapa/StaticBody2D"]
 polygon = PoolVector2Array( 957.986, -44.5153, 143.727, -44.9585, 114.148, -50.4186, 92.5625, -46.0505, 64.5819, -42.7745, 40.5983, -29.6702, -15.3631, -40.0444, -31.3521, -37.3143, -54.5361, -30.2161, -62.5306, -13.2898, -60.1323, 7.45868, -60.9318, 20.563, -73.723, 27.6611, -69.7257, 36.9434, -86.8689, 65.8438, -86.8689, 136.449, -78.3785, 172.431, 960.288, 172.431 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 85.7806, 516.368 )
+
+[node name="Pause" parent="." instance=ExtResource( 5 )]
+pause_mode = 2
 
