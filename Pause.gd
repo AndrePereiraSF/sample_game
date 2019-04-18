@@ -4,10 +4,12 @@ var is_paused = false
 
 func pause():
 	$PauseScreen.show()
+	is_paused = true
 	get_tree().paused = true
 
 func resume():
 	$PauseScreen.hide()
+	is_paused = false
 	get_tree().paused = false
 
 func _process(delta):

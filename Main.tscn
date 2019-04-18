@@ -25,12 +25,12 @@ texture = ExtResource( 4 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Main_area"]
 visible = false
 
-[node name="Terra_L" type="CollisionPolygon2D" parent="Main_area/StaticBody2D"]
+[node name="Ground_L" type="CollisionPolygon2D" parent="Main_area/StaticBody2D"]
 position = Vector2( 0.672241, 6.39656 )
 scale = Vector2( 1, 0.973323 )
 polygon = PoolVector2Array( -961.555, 169.403, -959.777, -41.8599, -493.99, -41.8599, -463.885, -33.0023, -455.523, -15.8777, -456.359, 1.83746, -443.815, 26.0482, -442.143, 72.1076, -427.927, 83.3273, -424.582, 111.671, -422.909, 130.568, -424.582, 155.959, -419.564, 168.951 )
 
-[node name="Terra_R" type="CollisionPolygon2D" parent="Main_area/StaticBody2D"]
+[node name="Ground_R" type="CollisionPolygon2D" parent="Main_area/StaticBody2D"]
 polygon = PoolVector2Array( 960.626, -38.6359, 223.599, -38.0615, 217.003, -41.5643, 141.458, -41.3582, 122.872, -46.5092, 113.279, -48.3636, 105.185, -46.7153, 97.0963, -42.2659, 72.4492, -41.6609, 47.9378, -30.2823, -17.2653, -29.7245, -32.6868, -25.6335, -47.5671, -15.2203, -50.2731, 8.02368, -48.3792, 27.3627, -56.766, 32.9412, -57.3071, 46.3297, -71.3758, 61.02, -77.3281, 93.7474, -72.729, 108.252, -77.0579, 141.909, -66.7769, 172.405, 960.288, 172.431 )
 
 [node name="Pause" parent="." instance=ExtResource( 5 )]

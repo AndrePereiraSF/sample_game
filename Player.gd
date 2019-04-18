@@ -22,10 +22,12 @@ func walk(direction):
 		$Sprite/AnimationPlayer.play("Walk")
 		$Sprite.flip_h = false
 
-
 func stop():
-	motion.x = 0
 	$Sprite/AnimationPlayer.play("Idle")
+	if is_on_floor():
+		motion.y = 0
+	motion.x = 0
+	
 
 func _ready():
 	screensize = get_viewport_rect().size
@@ -47,5 +49,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_select") and is_on_floor():
 		jump()
 		can_double_jump = true
+
+	if is_on_wall():
+		stop()
 
 	motion = move_and_slide(motion, UP)
