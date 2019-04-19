@@ -5,8 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Double Jump"
-length = 1.1
-loop = true
+length = 1.35
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -14,10 +13,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13 ]
+"values": [ 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -81,7 +80,7 @@ scale = Vector2( 0.352869, 0.352869 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 10
-frame = 14
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 "anims/Double Jump" = SubResource( 1 )

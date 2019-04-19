@@ -11,20 +11,24 @@ var screensize
 
 func jump():
 	motion.y = jump_heigth
+	if !can_double_jump:
+		$Sprite/AnimationPlayer.play("Jump")
+	elif can_double_jump:
+		$Sprite/AnimationPlayer.play("Double Jump")
 
 func walk(direction):
 	if direction == "left":
 		motion.x = -speed
-		$Sprite/AnimationPlayer.play("Walk")
 		$Sprite.flip_h = true
 	elif direction == "right":
 		motion.x = speed
-		$Sprite/AnimationPlayer.play("Walk")
 		$Sprite.flip_h = false
+	if is_on_floor():
+		$Sprite/AnimationPlayer.play("Walk")
 
 func stop():
-	$Sprite/AnimationPlayer.play("Idle")
 	if is_on_floor():
+		$Sprite/AnimationPlayer.play("Idle")
 		motion.y = 0
 	motion.x = 0
 	
