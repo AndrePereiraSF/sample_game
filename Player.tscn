@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/SpriteSheet.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=17]
+radius = 18.8929
 
 [sub_resource type="Animation" id=8]
 resource_name = "Crawl"
@@ -17,6 +20,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionShape2D:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 17 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.00198364, 0.139713 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../CollisionShape2D:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 18.8929 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -34,6 +73,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 3, 4, 5, 6, 8, 9, 11, 12, 14, 15, 17, 18, 20, 21, 23, 24, 26, 27, 31 ]
 }
+
+[sub_resource type="CapsuleShape2D" id=16]
+radius = 22.3598
+height = 3.27829
 
 [sub_resource type="Animation" id=14]
 resource_name = "Idle"
@@ -57,10 +100,58 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 16 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.647064, -2.87898 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../CollisionShape2D:shape:radius")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 22.4801 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../CollisionShape2D:shape:height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5.75027 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -129,27 +220,25 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=13]
-radius = 23.829
-height = 3.3035
-
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 170, 205.84 )
+position = Vector2( 171.11, 204.176 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.00106812, 0.0932007 )
 rotation = -6.28319
 scale = Vector2( 0.352869, 0.352869 )
 texture = ExtResource( 2 )
+offset = Vector2( -1.08212, -21.7722 )
 vframes = 5
 hframes = 7
-frame = 29
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/Crawl = SubResource( 8 )
@@ -160,6 +249,6 @@ anims/Rotate = SubResource( 7 )
 anims/Walk = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.223434, 0.409424 )
-shape = SubResource( 13 )
+position = Vector2( -0.00198364, 0.139713 )
+shape = SubResource( 17 )
 
