@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Background/Background.png" type="Texture" id=2]
-[ext_resource path="res://Background/Placa.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Placa.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Background/Main_area_2.png" type="Texture" id=5]
 [ext_resource path="res://Pause.tscn" type="PackedScene" id=6]
