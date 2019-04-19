@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Background/Background.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Placa.png" type="Texture" id=3]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Background/Main_area_2.png" type="Texture" id=5]
-[ext_resource path="res://Pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Background/Ground_L_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Placa.png" type="Texture" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Background/Ground_R_2.png" type="Texture" id=6]
+[ext_resource path="res://Background/Water.png" type="Texture" id=7]
+[ext_resource path="res://Background/Ground_L_2.png" type="Texture" id=8]
+[ext_resource path="res://Pause.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Background/Ground_R_1.png" type="Texture" id=10]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,35 +19,44 @@ position = Vector2( 683.246, 381.66 )
 scale = Vector2( 0.717223, 0.723854 )
 texture = ExtResource( 2 )
 
-[node name="Signal" type="Sprite" parent="."]
-position = Vector2( 847.096, 513.755 )
+[node name="Ground_L_1" type="Sprite" parent="."]
+position = Vector2( 238.107, 668.981 )
+scale = Vector2( 0.850655, 0.85852 )
 texture = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Signal" type="Sprite" parent="."]
+position = Vector2( 926.44, 538.828 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 31.3838, 525.189 )
 
-[node name="Main_area" type="Sprite" parent="."]
-position = Vector2( 681.597, 588.273 )
-scale = Vector2( 0.715985, 1.04173 )
-texture = ExtResource( 5 )
+[node name="Ground_R_2" type="Sprite" parent="."]
+position = Vector2( 763.999, 668.999 )
+scale = Vector2( 1, 0.944444 )
+texture = ExtResource( 6 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Main_area"]
-visible = false
+[node name="Water" type="Sprite" parent="."]
+position = Vector2( 522.095, 670.4 )
+scale = Vector2( 0.966527, 0.975463 )
+texture = ExtResource( 7 )
 
-[node name="Ground_L" type="CollisionPolygon2D" parent="Main_area/StaticBody2D"]
-position = Vector2( 0.672241, 6.39656 )
-scale = Vector2( 1, 0.973323 )
-polygon = PoolVector2Array( -961.555, 169.403, -959.777, -41.8599, -493.99, -41.8599, -463.885, -33.0023, -455.523, -15.8777, -456.359, 1.83746, -443.815, 26.0482, -442.143, 72.1076, -427.927, 83.3273, -424.582, 111.671, -422.909, 130.568, -424.582, 155.959, -419.564, 168.951 )
+[node name="Ground_L_2" type="Sprite" parent="."]
+position = Vector2( 191, 745.999 )
+scale = Vector2( 0.966527, 0.975463 )
+texture = ExtResource( 8 )
 
-[node name="Ground_R" type="CollisionPolygon2D" parent="Main_area/StaticBody2D"]
-polygon = PoolVector2Array( 960.626, -38.6359, 223.599, -38.0615, 217.003, -41.5643, 141.458, -41.3582, 122.872, -46.5092, 113.279, -48.3636, 105.185, -46.7153, 97.0963, -42.2659, 72.4492, -41.6609, 47.9378, -30.2823, -17.2653, -29.7245, -32.6868, -25.6335, -47.5671, -15.2203, -50.2731, 8.02368, -48.3792, 27.3627, -56.766, 32.9412, -57.3071, 46.3297, -71.3758, 61.02, -77.3281, 93.7474, -72.729, 108.252, -77.0579, 141.909, -66.7769, 172.405, 960.288, 172.431 )
-
-[node name="Pause" parent="." instance=ExtResource( 6 )]
+[node name="Pause" parent="." instance=ExtResource( 9 )]
 pause_mode = 2
 editor/display_folded = true
 
 [node name="PauseScreen" parent="Pause" index="0"]
 visible = false
+
+[node name="Ground_R_1" type="Sprite" parent="."]
+position = Vector2( 1061.77, 640.725 )
+scale = Vector2( 0.630698, 0.971084 )
+texture = ExtResource( 10 )
 
 
 [editable path="Pause"]
