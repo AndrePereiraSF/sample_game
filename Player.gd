@@ -9,15 +9,20 @@ var velocity = Vector2()
 var can_double_jump = false
 var screensize
 
+func crawl():
+	velocity.x = 0
+	velocity.y = 0
+	$Sprite/AnimationPlayer.play("Crawl")
+
 func jump():
 	velocity.y = jump_heigth
 	if !can_double_jump:
 		$Sprite/AnimationPlayer.play("Jump")
 	elif can_double_jump:
-		if velocity.x == 0:
-			$Sprite/AnimationPlayer.play("Double Jump")
-		elif velocity.x != 0:
-			$Sprite/AnimationPlayer.play_backwards("Double Jump")			
+		if velocity.x <= 0:
+			$Sprite/AnimationPlayer.play("Rotate")
+		elif velocity.x > 0:
+			$Sprite/AnimationPlayer.play_backwards("Rotate")			
 
 func walk(direction):
 	if direction == "left":
@@ -56,6 +61,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_select") and is_on_floor():
 		jump()
 		can_double_jump = true
+
+	if Input.is_action_pressed("ui_down"):
+		if is_on_floor():
+			crawl()
 
 	if is_on_wall():
 		stop()
