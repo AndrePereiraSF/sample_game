@@ -15,7 +15,7 @@ position = Vector2( 683.246, 381.66 )
 scale = Vector2( 0.717223, 0.723854 )
 texture = ExtResource( 2 )
 
-[node name="Placa" type="Sprite" parent="."]
+[node name="Signal" type="Sprite" parent="."]
 position = Vector2( 847.096, 513.755 )
 texture = ExtResource( 3 )
 
@@ -40,4 +40,10 @@ polygon = PoolVector2Array( 960.626, -38.6359, 223.599, -38.0615, 217.003, -41.5
 
 [node name="Pause" parent="." instance=ExtResource( 6 )]
 pause_mode = 2
+editor/display_folded = true
 
+[node name="PauseScreen" parent="Pause" index="0"]
+visible = false
+
+
+[editable path="Pause"]
