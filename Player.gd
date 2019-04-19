@@ -5,23 +5,26 @@ const UP = Vector2(0, -1)
 var GRAVITY = 20
 var jump_heigth = -500
 var speed = 200
-var motion = Vector2()
+var velocity = Vector2()
 var can_double_jump = false
 var screensize
 
 func jump():
-	motion.y = jump_heigth
+	velocity.y = jump_heigth
 	if !can_double_jump:
 		$Sprite/AnimationPlayer.play("Jump")
 	elif can_double_jump:
-		$Sprite/AnimationPlayer.play("Double Jump")
+		if velocity.x == 0:
+			$Sprite/AnimationPlayer.play("Double Jump")
+		elif velocity.x != 0:
+			$Sprite/AnimationPlayer.play_backwards("Double Jump")			
 
 func walk(direction):
 	if direction == "left":
-		motion.x = -speed
+		velocity.x = -speed
 		$Sprite.flip_h = true
 	elif direction == "right":
-		motion.x = speed
+		velocity.x = speed
 		$Sprite.flip_h = false
 	if is_on_floor():
 		$Sprite/AnimationPlayer.play("Walk")
@@ -29,8 +32,8 @@ func walk(direction):
 func stop():
 	if is_on_floor():
 		$Sprite/AnimationPlayer.play("Idle")
-		motion.y = 0
-	motion.x = 0
+		velocity.y = 0
+	velocity.x = 0
 	
 
 func _ready():
@@ -38,7 +41,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.x = clamp(position.x, 0, screensize.x )
-	motion.y += GRAVITY
+	velocity.y += GRAVITY
 
 	if Input.is_action_pressed("ui_right"):
 		walk("right")
@@ -57,4 +60,4 @@ func _physics_process(delta):
 	if is_on_wall():
 		stop()
 
-	motion = move_and_slide(motion, UP)
+	velocity = move_and_slide(velocity, UP)
