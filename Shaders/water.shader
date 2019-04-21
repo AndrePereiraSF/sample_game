@@ -9,7 +9,7 @@ uniform vec2 sprite_scale;
 uniform float scale_x = 0.67;
 
 float rand(vec2 coord){
-	return fract(sin(dot(coord, vec2(12.9898, 78.233)))* 43758.5453123);
+	return fract(sin(dot(coord, vec2(12.9898, 78.233))) * 43758.5453123);
 }
 
 float noise(vec2 coord){
@@ -32,13 +32,13 @@ void fragment(){
 	vec2 noisecoord1 = UV * sprite_scale * scale_x;
 	vec2 noisecoord2 = UV * sprite_scale * scale_x + 4.0;
 	
-	vec2 motion1 = vec2(TIME * 0.3, TIME * -0.4);
-	vec2 motion2 = vec2(TIME * 0.1, TIME * 0.5);
+	vec2 motion1 = vec2(TIME * 0.1, TIME * -0.1);
+	vec2 motion2 = vec2(TIME * 0.1, TIME * 0.1);
 	
-	vec2 distort1 = vec2(noise(noisecoord1 + motion1), noise(noisecoord2 + motion1)) - vec2(0.5);
-	vec2 distort2 = vec2(noise(noisecoord1 + motion2), noise(noisecoord2 + motion2)) - vec2(0.5);
+	vec2 distort1 = vec2(noise(noisecoord1 + motion1), noise(noisecoord2 + motion1)) - vec2(0.1);
+	vec2 distort2 = vec2(noise(noisecoord1 + motion2), noise(noisecoord2 + motion2)) - vec2(0.1);
 	
-	vec2 distort_sum = (distort1 + distort2) / 60.0;
+	vec2 distort_sum = (distort1 + distort2) / 96.0;
 	
 	vec4 color = textureLod(SCREEN_TEXTURE, SCREEN_UV + distort_sum, 0.0);
 	
