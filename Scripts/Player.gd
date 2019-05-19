@@ -71,6 +71,5 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity, UP)
 
-
 func _on_Area2D_body_entered(body):
 	print("Water entered")

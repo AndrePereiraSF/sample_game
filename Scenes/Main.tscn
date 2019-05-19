@@ -56,8 +56,7 @@ z_index = -1
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1317.82, 477.183 )
-z_index = -1
+z_index = -2
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( 191, 745.999 )
@@ -70,6 +69,7 @@ z_index = -1
 texture = ExtResource( 5 )
 
 [node name="Ground_L_1" type="Sprite" parent="Ground"]
+editor/display_folded = true
 position = Vector2( 48.7384, -77.087 )
 scale = Vector2( 0.880115, 0.880115 )
 z_index = -1
@@ -84,8 +84,8 @@ polygon = PoolVector2Array( -280.834, -104.355, 185.228, -105.922, 206.476, -104
 
 [node name="Ground_R_1" type="Sprite" parent="Ground"]
 editor/display_folded = true
-position = Vector2( 900.927, -107.922 )
-scale = Vector2( 0.652541, 0.995511 )
+position = Vector2( 904.228, -107.922 )
+scale = Vector2( 0.645798, 0.995511 )
 texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground/Ground_R_1"]
@@ -100,19 +100,20 @@ texture = ExtResource( 8 )
 [node name="Water" type="Node2D" parent="."]
 z_index = -1
 
-[node name="Water" type="Sprite" parent="Water"]
+[node name="Area2D" type="Area2D" parent="Water"]
 position = Vector2( 420.024, 662.523 )
 scale = Vector2( 0.786026, 0.991242 )
+
+[node name="Water" type="Sprite" parent="Water/Area2D"]
+use_parent_material = true
 texture = ExtResource( 9 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Water/Water"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water/Area2D"]
+polygon = PoolVector2Array( 67.1873, 105.541, 63.8499, 97.1533, 60.3837, 89.977, 56.9175, 72.8906, 56.9175, 52.7287, 56.9175, 39.0595, 53.8846, 24.0235, 49.552, 19.2393, 40.8867, 12.063, 36.554, -3.3147, 36.554, -23.8184, 30.4882, -37.1457, 27.4553, -49.1062, 21.8229, -59.6998, 21.8229, -68.2429, 32.6545, -90.4553, 43.053, -86.0128, 61.6834, -82.9373, 80.7472, -79.52, 108.043, -78.8365, 133.606, -78.8365, 152.236, -83.2789, 181.265, -87.038, 211.161, -86.3546, 225.892, -86.3546, 235.424, -84.9876, 254.054, -87.3797, 281.783, -92.5056, 291.748, -91.4803, 296.514, -89.7717, 298.681, -86.3544, 298.247, -83.6206, 315.578, -87.7213, 332.042, -91.4803, 345.907, -94.5559, 357.172, -95.5811, 368.003, -95.5811, 373.636, -93.189, 383.168, -68.5845, 377.535, -64.1422, 375.369, -56.6241, 375.802, -43.9803, 375.802, -31.3364, 375.802, -26.5522, 371.036, -19.7176, 364.537, -9.8075, 359.771, -1.26434, 350.673, 4.88678, 347.207, 13.4299, 345.474, 26.7574, 344.174, 40.0847, 344.607, 47.261, 348.506, 57.1712, 347.207, 69.1316, 343.741, 79.3835, 344.174, 88.9518, 349.373, 96.1281, 354.139, 106.38 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Water/Area2D"]
 playback_speed = 0.6
 anims/Wave = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="Water/Water"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water/Water/Area2D"]
-polygon = PoolVector2Array( 67.1873, 105.541, 63.8499, 97.1533, 60.3837, 89.977, 56.9175, 72.8906, 56.9175, 52.7287, 56.9175, 39.0595, 53.8846, 24.0235, 49.552, 19.2393, 40.8867, 12.063, 36.554, -3.3147, 36.554, -23.8184, 30.4882, -37.1457, 27.4553, -49.1062, 21.8229, -59.6998, 21.8229, -68.2429, 32.6545, -90.4553, 43.053, -86.0128, 61.6834, -82.9373, 80.7472, -79.52, 108.043, -78.8365, 133.606, -78.8365, 152.236, -83.2789, 181.265, -87.038, 211.161, -86.3546, 225.892, -86.3546, 235.424, -84.9876, 254.054, -87.3797, 281.783, -92.5056, 291.748, -91.4803, 296.514, -89.7717, 298.681, -86.3544, 298.247, -83.6206, 315.578, -87.7213, 332.042, -91.4803, 345.907, -94.5559, 357.172, -95.5811, 368.003, -95.5811, 373.636, -93.189, 383.168, -68.5845, 377.535, -64.1422, 375.369, -56.6241, 375.802, -43.9803, 375.802, -31.3364, 375.802, -26.5522, 371.036, -19.7176, 364.537, -9.8075, 359.771, -1.26434, 350.673, 4.88678, 347.207, 13.4299, 345.474, 26.7574, 344.174, 40.0847, 344.607, 47.261, 348.506, 57.1712, 347.207, 69.1316, 343.741, 79.3835, 344.174, 88.9518, 349.373, 96.1281, 354.139, 106.38 )
 
 [node name="Pause" parent="." instance=ExtResource( 10 )]
 pause_mode = 2
@@ -121,6 +122,6 @@ editor/display_folded = true
 [node name="PauseScreen" parent="Pause" index="0"]
 visible = false
 
-[connection signal="body_entered" from="Water/Water/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Water/Area2D" to="Player" method="_on_Area2D_body_entered"]
 
 [editable path="Pause"]
