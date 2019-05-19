@@ -123,5 +123,6 @@ editor/display_folded = true
 visible = false
 
 [connection signal="body_entered" from="Water/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Water/Area2D" to="Player" method="_on_Area2D_body_exited"]
 
 [editable path="Pause"]
